@@ -1,2 +1,2 @@
 # Udemy_queries
-SQL queries and procedures 
+SQL queries, views and procedures on Udemy Courses free dataset from ![kaggle.com](https://www.kaggle.com/andrewmvd/udemy-courses)
