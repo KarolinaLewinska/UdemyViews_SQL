@@ -57,15 +57,6 @@ GO
 SELECT * FROM no_subscriptions
 -------------------------------------
 GO
-CREATE VIEW count_no_subscriptions AS
-SELECT TOP 1 SUM(COUNT([Number of Subscribers])) OVER() AS 'Total Number of Courses with Zero Subscribers' 
-FROM udemy_data  
-WHERE [Number of Subscribers] = 0
-GROUP BY Title
-GO
-SELECT * FROM count_no_subscriptions
--------------------------------------
-GO
 CREATE VIEW max_statistics AS
 SELECT MAX([Price (in dollars)]) AS 'Maximal Price (in dollars)',
 MAX([Number of Subscribers]) AS 'Maximal Number of Subscribers',
@@ -115,14 +106,14 @@ GO
 SELECT * FROM courses_by_isPaid
 -------------------------------------
 GO
-CREATE VIEW paid_courses_count_and_percent AS
-SELECT COUNT([Is Paid]) AS 'Number of Paid Courses',
-CAST(ROUND(COUNT([Is Paid]) * 100.0 / (SELECT COUNT(*) FROM udemy_data), 2) AS DECIMAL(4,2)) AS 'Percent of Paid Courses'
-FROM udemy_data WHERE [Is Paid] = 1
+CREATE VIEW paid_courses_count_and_percent 
+AS
+SELECT COUNT([Is Paid]) AS 'Number of Paid Courses and Percent (in total)' FROM udemy_data WHERE [Is Paid] = 1 UNION ALL
+SELECT CAST(ROUND(COUNT([Is Paid]) * 100.0 / (SELECT COUNT(*) FROM udemy_data), 2) AS DECIMAL(4,2))
+FROM udemy_data WHERE [Is Paid] = 1 
 GROUP BY [Is Paid]
 GO
 SELECT * FROM paid_courses_count_and_percent
-
 -------------------------------------
 GO
 CREATE VIEW oldest_and_newest_date_difference AS
