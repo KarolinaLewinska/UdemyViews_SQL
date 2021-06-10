@@ -13,7 +13,6 @@ GO
 SELECT * FROM select_ordered_data ORDER BY [Price (in dollars)] DESC, [Number of Subscribers] DESC
 SELECT * FROM select_ordered_data ORDER BY [Price (in dollars)], [Number of Subscribers] DESC
 SELECT * FROM select_ordered_data ORDER BY [Duration (in hours)] DESC
-
 --------------------------------------
 GO
 CREATE VIEW number_of_courses AS
