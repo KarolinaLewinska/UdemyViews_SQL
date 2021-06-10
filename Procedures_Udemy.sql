@@ -64,7 +64,7 @@ BEGIN
 END
 GO
 EXEC select_courses_by_date_range  @min_date ='2017-01-01' , @max_date='2021-01-01'
-
+-------------------------------------
 GO
 CREATE PROCEDURE select_n_popular
 @rows_num INT
