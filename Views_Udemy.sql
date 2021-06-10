@@ -1,9 +1,3 @@
-ALTER TABLE udemy_data ADD [Date of Publishing] DATE
-ALTER TABLE udemy_data ADD [Time of Publishing] TIME
-UPDATE udemy_data SET [Date of Publishing] = SUBSTRING(published_timestamp,1,10)
-UPDATE udemy_data SET [Time of Publishing] = SUBSTRING(published_timestamp,12,7)
-ALTER TABLE udemy_data DROP COLUMN published_timestamp
---------------------------------------
 GO
 CREATE VIEW select_ordered_data
 AS
