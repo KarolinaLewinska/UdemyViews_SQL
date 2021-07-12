@@ -86,3 +86,5 @@ END
 GO
 EXEC select_n_popular @rows_num=10
 EXEC select_n_popular @rows_num=100
+
+-------------------------------------
