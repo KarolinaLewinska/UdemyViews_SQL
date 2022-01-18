@@ -1,2 +1,2 @@
-# Udemy Courses Dataset Report
-SQL views and procedures on Udemy courses free dataset from [kaggle.com](https://www.kaggle.com/andrewmvd/udemy-courses)
+# Udemy Courses Dataset Analysis
+SQL views and procedures of Udemy courses free dataset from the website [kaggle.com](https://www.kaggle.com/andrewmvd/udemy-courses).
